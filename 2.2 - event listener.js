@@ -4,7 +4,8 @@ class EagerButton extends React.Component {
     }
     
     render() {
-      return (<button onClick={this.handleClick}>Click me! Click me!</button>
+      return (
+            <button onClick={this.handleClick}>Click me! Click me!</button>
         );
     }
   }

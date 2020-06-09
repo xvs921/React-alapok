@@ -1,0 +1,33 @@
+A React minden event handlert egy úgynevezett SyntheticEvent wrapperbe csomagol. Ha szeretnéd mélyen érteni, hogy ez mit jelent, akkor itt a hivatalos dokumentáció. A gyakorlatban azonban elég annyit tudnod, hogy ez történik, illetve tisztában lenned az okával: a SyntheticEvent wrapper biztosítja, hogy az eventjeid böngészőtől függetlenül mindenhol ugyanúgy működjenek.
+A Reactban a return false módszerrel nem tudod megakadályozni egy elem alapértelmezett működését. Muszáj az explicit preventDefault metódust használnod.
+
+
+Összefoglaló a React Event Systemről
+
+
+Csakúgy, mint a vanilla JavaScript, a React is képes user eventekre figyelni, és azokra reagálni.
+
+Szintaxis
+Event listenert a következő módon lehet egy JSX-elemhez adni:
+
+<button onClick={handleClick}>Click me!</button>
+Az attribútum camelCase.
+A handler metódus neve kapcsos zárójelben áll, és nincs mögötte zárójel!
+
+A React inline event listenereket alkalmaz, utólag rárakott addEventListener struktúra helyett. Ez filozófiájában jól illik a Reactba, hiszen így a komponens hozza magával a teljes logikáját is.
+
+Hova kerül az event handler?
+Jó gyakorlatként ugyanarra a class komponensre, ahová maga az event listener kerül.
+
+
+A Reactban a this kulcsszónak az adott komponens instance-ére érdemes mutatni, ezért az event handlerökben bindolnunk kell a this-t. Erre két lehetőségünk létezik:
+
+Arrow functionként írjuk meg a handlert.
+Explicite bindoljuk a class constructorban.
+Argumentumok az event handlerökben
+Két módszer létezik:
+
+Anonymous arrow function:
+<button onClick={() => this.handleClick("I’m an argument.")}>Click me!</button>
+Binding the event handler:
+<button onClick={this.handleClick.bind(this, "I’m an argument.")}>Click me!</button>
