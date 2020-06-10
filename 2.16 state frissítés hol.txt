@@ -1,0 +1,2 @@
+Hova kerüljenek a state-et frissítő metódusok?
+A state-et módosító kódnak a state-et birtokló komponensen kell lennie.
