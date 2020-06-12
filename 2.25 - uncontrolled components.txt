@@ -1,0 +1,8 @@
+Hogyan nyerhetünk ki input value-t refen keresztül a Reactban
+
+A folyamat több logikai lépésből áll:
+
+Először létrehozzuk a refet a komponensen → this.myRef = React.createRef();
+Megjegyzés: A constructor() metódusban.
+A kontrollálni kívánt inputhoz hozzáadunk egy ref attribútumot, és az értékének az előbb létrehozott refet adjuk meg → ref={this.myRef}
+Ezek után az event handlerben az input értékét a következő utasítással kaphatjuk meg → this.myRef.current.value
