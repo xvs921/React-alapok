@@ -1,0 +1,51 @@
+Minden React-komponens átmegy egy „életcikluson” (lifecycle-ön), amely három fázisból áll:
+
+Mounting → A komponens létrejön, és behelyeződik a DOM-ba.
+Updating → A komponens újrarenderelődik a state vagy a props változása miatt.
+Unmounting → A komponens leválik a DOM-ról, és „elpusztul”.
+
+A React rendelkezik úgynevezett lifecycle metódusokkal, amelyek ezen fázisok valamelyikében futnak le, 
+és lehetőséget adnak számunkra, hogy specifikus időpillanatokban hajtsunk végre valamilyen kódot.
+
+
+Melyek a leggyakoribb lifecycle metódusok, és mikor futnak le a komponens életciklusában?
+Mounting
+constructor()
+render()
+componentDidMount()
+static getDerivedStateFromProps()
+
+Updating
+render()
+componentDidUpdate()
+static getDerivedStateFromProps()
+shouldComponentUpdate()
+getSnapshotBeforeUpdate()
+
+Unmounting
+componentWillUnmount()
+
+Melyek a gyakori felhasználási helyzetei a lifecycle metódusoknak?
+
+render()
+JSX-komponensek/elemek visszaadása (returnölése)
+
+constructor()
+state inicializálása
+custom metódusok bindingja
+
+componentDidMount()
+network requestek
+subscription setup
+
+componentDidUpdate()
+DOM-operációk
+network requestek
+
+componentWillUnmount()
+rendrakás
+timerek invalidálása
+network requestek leállítása
+subscriptionök megszüntetése
+
+Hivatalos dokumentáció: https://reactjs.org/docs/react-component.html#commonly-used-lifecycle-methods
